@@ -528,6 +528,113 @@
   .comp-tag.org { background: rgba(0,229,255,0.08); color: var(--cyan); font-size: 10px; }
   .comp-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
 
+  /* ===== MAPPING TABLE ===== */
+  .mapping-table-wrap {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px;
+    padding: 32px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .mapping-title {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 16px; font-weight: 700; color: var(--text);
+    margin-bottom: 24px;
+  }
+  .mapping-icon { font-size: 22px; }
+  .mapping-table {
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .mapping-header {
+    display: grid;
+    grid-template-columns: 220px 1fr 260px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .mh-col {
+    padding: 14px 20px;
+    font-size: 11px; font-weight: 700; letter-spacing: 1px;
+    color: var(--text-dim); text-transform: uppercase;
+  }
+  .mapping-row {
+    display: grid;
+    grid-template-columns: 220px 1fr 260px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    background: var(--dark2);
+    transition: background 0.2s;
+  }
+  .mapping-row:hover { background: rgba(255,255,255,0.02); }
+  .mapping-row.mapping-row-last { border-bottom: none; }
+  .mr-track {
+    padding: 20px;
+    border-right: 1px solid rgba(255,255,255,0.04);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .track-badge {
+    width: 36px; height: 36px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 15px; font-weight: 900; flex-shrink: 0;
+    color: #000;
+  }
+  .track-badge.track-a { background: linear-gradient(135deg, #D32F2F, #B71C1C); }
+  .track-badge.track-b { background: linear-gradient(135deg, var(--cyan), #00838F); }
+  .track-badge.track-c { background: linear-gradient(135deg, var(--gold), #FF8F00); }
+  .track-info { display: flex; flex-direction: column; gap: 2px; }
+  .track-name { font-size: 14px; font-weight: 700; color: var(--text); }
+  .track-en { font-size: 11px; color: var(--text-dim); }
+  .mr-comp {
+    padding: 20px;
+    border-right: 1px solid rgba(255,255,255,0.04);
+  }
+  .comp-items { display: flex; flex-direction: column; gap: 10px; }
+  .ci-item { display: flex; align-items: center; gap: 10px; }
+  .ci-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+  }
+  .ci-dot.ci-red { background: #D32F2F; box-shadow: 0 0 6px rgba(211,47,47,0.5); }
+  .ci-dot.ci-cyan { background: var(--cyan); box-shadow: 0 0 6px rgba(0,174,239,0.5); }
+  .ci-dot.ci-gold { background: var(--gold); box-shadow: 0 0 6px rgba(255,193,7,0.5); }
+  .ci-name {
+    font-size: 13px; font-weight: 700; color: var(--text);
+    min-width: 130px;
+  }
+  .ci-full { font-size: 11px; color: var(--text-dim); }
+  .mr-base { padding: 20px; }
+  .base-stage {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: 1px solid;
+  }
+  .base-stage.e1e2 {
+    background: rgba(211,47,47,0.08);
+    border-color: rgba(211,47,47,0.2);
+  }
+  .base-stage.visionary {
+    background: rgba(0,174,239,0.08);
+    border-color: rgba(0,174,239,0.2);
+  }
+  .base-stage.explore {
+    background: rgba(255,193,7,0.08);
+    border-color: rgba(255,193,7,0.2);
+  }
+  .bs-icon { font-size: 18px; }
+  .bs-text { display: flex; flex-direction: column; gap: 4px; }
+  .bs-primary { font-size: 13px; font-weight: 700; color: var(--text); }
+  .bs-desc { font-size: 11px; color: var(--text-dim); line-height: 1.5; }
+  .mapping-note {
+    display: flex; align-items: center; gap: 8px;
+    margin-top: 20px; padding: 12px 16px;
+    background: rgba(255,193,7,0.06);
+    border: 1px solid rgba(255,193,7,0.15);
+    border-radius: 10px;
+    font-size: 13px; color: var(--text-dim);
+  }
+  .mapping-note .note-icon { font-size: 16px; }
+
   /* ===== CTA SECTION ===== */
   .cta-section {
     background: linear-gradient(135deg, var(--dark2), var(--dark3));
@@ -979,6 +1086,14 @@
     .gallery-grid { grid-template-columns: 1fr; }
     .gallery-main { grid-row: unset; }
     .gallery-main img, .gallery-item img { min-height: 286px; }
+    .mapping-header, .mapping-row {
+      grid-template-columns: 1fr;
+    }
+    .mh-col, .mr-track, .mr-comp, .mr-base {
+      border-right: none; border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .mh-col { display: none; }
+    .mapping-table-wrap { padding: 20px; }
   }
 </style>
 </head>
@@ -1564,6 +1679,131 @@
           <div class="section-tag">Competition Navigator</div>
           <h2 class="section-title">AI 竞赛<span>导航地图</span></h2>
           <p class="section-desc">课程结束即可直接冲击这些舞台，覆盖 8-大学全年龄段。</p>
+        </div>
+
+        <!-- Competition-to-Curriculum Mapping Table -->
+        <div class="mapping-table-wrap">
+          <div class="mapping-title">
+            <span class="mapping-icon">🗺️</span>
+            <span>赛道 · 赛事 · 核心依赖课程阶段</span>
+          </div>
+          <div class="mapping-table">
+            <div class="mapping-header">
+              <div class="mh-col mh-track">赛道分类</div>
+              <div class="mh-col mh-comp">目标赛事</div>
+              <div class="mh-col mh-base">核心依赖课程阶段</div>
+            </div>
+            <div class="mapping-row">
+              <div class="mr-track">
+                <span class="track-badge track-a">A</span>
+                <div class="track-info">
+                  <div class="track-name">算法与奥赛类</div>
+                  <div class="track-en">Algorithm & Olympiad Track</div>
+                </div>
+              </div>
+              <div class="mr-comp">
+                <div class="comp-items">
+                  <div class="ci-item">
+                    <span class="ci-dot ci-red"></span>
+                    <span class="ci-name">IOAI</span>
+                    <span class="ci-full">International Olympiad in AI</span>
+                  </div>
+                  <div class="ci-item">
+                    <span class="ci-dot ci-red"></span>
+                    <span class="ci-name">AI Olympia</span>
+                    <span class="ci-full">IRCAI 国际 AI 奥林匹克</span>
+                  </div>
+                  <div class="ci-item">
+                    <span class="ci-dot ci-orange"></span>
+                    <span class="ci-name">Kaggle</span>
+                    <span class="ci-full">Google 机器学习平台</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mr-base">
+                <div class="base-stage e1e2">
+                  <span class="bs-icon">🎯</span>
+                  <div class="bs-text">
+                    <span class="bs-primary">Elite 1 & 2</span>
+                    <span class="bs-desc">深度学习底层原理 / 模型调优 / NLP & CV 算法</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mapping-row">
+              <div class="mr-track">
+                <span class="track-badge track-b">B</span>
+                <div class="track-info">
+                  <div class="track-name">具身智能与机器人类</div>
+                  <div class="track-en">Embodied AI & Robotics Track</div>
+                </div>
+              </div>
+              <div class="mr-comp">
+                <div class="comp-items">
+                  <div class="ci-item">
+                    <span class="ci-dot ci-cyan"></span>
+                    <span class="ci-name">VEX AI</span>
+                    <span class="ci-full">VEX Robotics AI 挑战赛</span>
+                  </div>
+                  <div class="ci-item">
+                    <span class="ci-dot ci-cyan"></span>
+                    <span class="ci-name">BEHAVIOR</span>
+                    <span class="ci-full">BEHAVIOR Challenge 具身智能赛</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mr-base">
+                <div class="base-stage visionary">
+                  <span class="bs-icon">🤖</span>
+                  <div class="bs-text">
+                    <span class="bs-primary">Visionary & Elite 1</span>
+                    <span class="bs-desc">视觉加速 / ROS 2 机器人系统 / Isaac Sim 仿真</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="mapping-row mapping-row-last">
+              <div class="mr-track">
+                <span class="track-badge track-c">C</span>
+                <div class="track-info">
+                  <div class="track-name">系统集成与黑客松类</div>
+                  <div class="track-en">System Integration & Hackathon Track</div>
+                </div>
+              </div>
+              <div class="mr-comp">
+                <div class="comp-items">
+                  <div class="ci-item">
+                    <span class="ci-dot ci-gold"></span>
+                    <span class="ci-name">Presidential AI</span>
+                    <span class="ci-full">总统杯 AI 挑战赛</span>
+                  </div>
+                  <div class="ci-item">
+                    <span class="ci-dot ci-gold"></span>
+                    <span class="ci-name">NASA Space Apps</span>
+                    <span class="ci-full">NASA 国际太空应用黑客松</span>
+                  </div>
+                  <div class="ci-item">
+                    <span class="ci-dot ci-gold"></span>
+                    <span class="ci-name">Zero Robotics</span>
+                    <span class="ci-full">MIT/ESA 太空机器人编程</span>
+                  </div>
+                </div>
+              </div>
+              <div class="mr-base">
+                <div class="base-stage explore">
+                  <span class="bs-icon">🔗</span>
+                  <div class="bs-text">
+                    <span class="bs-primary">Explorer & Elite 2</span>
+                    <span class="bs-desc">API 集成 / LLM 微调 / 数据科学实战</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mapping-note">
+            <span class="note-icon">💡</span>
+            <span>选课路径：先完成基础阶段课程，再根据目标赛事选择对应的 Elite 专项深化方向</span>
+          </div>
         </div>
 
         <!-- Age filter chips -->
