@@ -528,6 +528,21 @@
     display: flex; align-items: center; justify-content: center;
     color: var(--text-dim); font-size: 11px; text-align: center;
   }
+  .at-badge-cell { padding: 16px 20px; display: flex; align-items: center; }
+  .badge-stack { display: flex; flex-direction: column; gap: 8px; }
+  .badge-item {
+    padding: 6px 12px; border-radius: 10px; font-size: 11px; font-weight: 700;
+    display: inline-flex; align-items: center; gap: 5px;
+  }
+  .badge-gold { background: rgba(255,215,0,0.12); color: var(--gold); border: 1px solid rgba(255,215,0,0.25); }
+  .badge-red { background: rgba(211,47,47,0.12); color: #EF9A9A; border: 1px solid rgba(211,47,47,0.25); }
+  .badge-cyan { background: rgba(0,174,239,0.12); color: var(--cyan); border: 1px solid rgba(0,174,239,0.25); }
+  .badge-purple { background: rgba(206,147,216,0.12); color: #CE93D8; border: 1px solid rgba(206,147,216,0.25); }
+  .at-row-ioai {
+    background: linear-gradient(135deg, rgba(255,215,0,0.06), rgba(255,160,0,0.03));
+    border-left: 3px solid var(--gold);
+  }
+  .at-row-ioai .at-year { font-size: 18px; color: var(--gold); }
 
   /* ===== COMPETITIONS ===== */
   .competitions-section { background: var(--dark); }
@@ -1789,10 +1804,34 @@
             <div class="ahb-cell">年份 / Year</div>
             <div class="ahb-cell">赛事与荣誉 / Events & Honors</div>
             <div class="ahb-cell">核心成就 / Key Achievements</div>
-            <div class="ahb-cell">实拍 / Photo</div>
+            <div class="ahb-cell">荣誉徽章 / Badges</div>
           </div>
 
           <div class="achievements-table">
+
+            <!-- Row 0: IOAI International - TOP TIER -->
+            <div class="at-row at-row-ioai">
+              <div class="at-cell">
+                <div class="at-year">2025–2026</div>
+                <div class="at-desc">IOAI 国际人工智能奥林匹克</div>
+              </div>
+              <div class="at-cell" style="grid-column: 1 / -1;">
+                <div class="at-highlights">
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot gold"></span>
+                    <span>MAGIKID 学员入选<strong style="color:var(--gold)">美国国家 AI 代表队</strong>，代表 Team USA 出征斯洛文尼亚世界赛</span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot red"></span>
+                    <span>世界赛夺得<strong style="color:#D32F2F">2金1荣誉奖</strong>，全球排名 <strong style="color:#D32F2F">No.1</strong></span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot cyan"></span>
+                    <span>学员获<strong style="color:var(--cyan)">哈佛 / 普林斯顿 / 斯坦福 / MIT / 耶鲁</strong>等顶尖名校录取</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <!-- Row 1: NASA Space Apps -->
             <div class="at-row">
@@ -1828,8 +1867,12 @@
                   </div>
                 </div>
               </div>
-              <div class="at-img-cell">
-                <div class="at-img-placeholder" onclick="alert('请上传 NASA 获奖证书或团队照片')">📷<br>上传照片</div>
+              <div class="at-badge-cell">
+                <div class="badge-stack">
+                  <div class="badge-item badge-gold">🏆 世界级赛事</div>
+                  <div class="badge-item badge-cyan">🌌 NASA 官方</div>
+                  <div class="badge-item badge-purple">🚀 诺奖同会</div>
+                </div>
               </div>
             </div>
 
@@ -1891,8 +1934,12 @@
                   </div>
                 </div>
               </div>
-              <div class="at-img-cell">
-                <div class="at-img-placeholder" onclick="alert('请上传 Caltech 公开赛现场照片')">📷<br>上传照片</div>
+              <div class="at-badge-cell">
+                <div class="badge-stack">
+                  <div class="badge-item badge-gold">🎓 加州理工</div>
+                  <div class="badge-item badge-red">🏆 世锦赛奖牌</div>
+                  <div class="badge-item badge-cyan">🤖 机器人赛</div>
+                </div>
               </div>
             </div>
 
@@ -1916,12 +1963,6 @@
               </div>
             </div>
 
-          </div>
-          <div style="padding: 16px 24px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
-            <p style="color: var(--text-dim); font-size: 13px;">
-              📸 点击「上传照片」上传您的获奖证书/现场照 ·
-              <a href="#cta" style="color: var(--gold); font-weight: 700;">加入 MAGIKID，下一个故事的主角就是你 →</a>
-            </p>
           </div>
         </div>
 
