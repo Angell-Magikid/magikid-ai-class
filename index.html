@@ -481,6 +481,54 @@
     border-color: rgba(255,215,0,0.4);
   }
 
+  /* ===== ACHIEVEMENTS HALL ===== */
+  .achievements-section { background: var(--dark); }
+  .achievements-table-wrap {
+    margin-top: 40px;
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 20px; overflow: hidden;
+    background: var(--dark2);
+  }
+  .achievements-header-bar {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+    background: linear-gradient(135deg, rgba(255,215,0,0.08), rgba(255,160,0,0.04));
+    border-bottom: 1px solid rgba(255,215,0,0.12);
+  }
+  .ahb-cell { padding: 14px 20px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--text-dim); text-align: center; }
+  .ahb-cell:first-child { text-align: left; }
+  .achievements-table { }
+  .at-row {
+    display: grid; grid-template-columns: 1fr 1fr 1fr 1fr;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: background 0.2s; align-items: stretch;
+  }
+  .at-row:last-child { border-bottom: none; }
+  .at-row:hover { background: rgba(255,255,255,0.02); }
+  .at-cell { padding: 20px 20px; }
+  .at-year { font-size: 15px; font-weight: 800; color: var(--gold); margin-bottom: 4px; }
+  .at-desc { font-size: 12px; color: var(--text-dim); line-height: 1.6; }
+  .at-highlights { display: flex; flex-direction: column; gap: 6px; }
+  .at-highlight-item { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; color: var(--text); }
+  .at-highlight-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .at-highlight-dot.red { background: #D32F2F; }
+  .at-highlight-dot.cyan { background: var(--cyan); }
+  .at-highlight-dot.gold { background: var(--gold); }
+  .at-highlight-dot.orange { background: var(--orange); }
+  .at-highlight-dot.purple { background: #CE93D8; }
+  .at-img-cell { padding: 16px 20px; display: flex; align-items: center; justify-content: center; }
+  .at-img-thumb {
+    width: 80px; height: 80px; border-radius: 12px; object-fit: cover;
+    border: 1px solid rgba(255,255,255,0.08); cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .at-img-thumb:hover { transform: scale(1.05); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+  .at-img-placeholder {
+    width: 80px; height: 80px; border-radius: 12px;
+    background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-dim); font-size: 11px; text-align: center;
+  }
+
   /* ===== COMPETITIONS ===== */
   .competitions-section { background: var(--dark); }
   .comp-filter {
@@ -1142,6 +1190,11 @@
     }
     .mh-col { display: none; }
     .mapping-table-wrap { padding: 20px; }
+    .achievements-header-bar, .at-row {
+      grid-template-columns: 1fr;
+    }
+    .ahb-cell { display: none; }
+    .at-cell { border-bottom: 1px solid rgba(255,255,255,0.04); }
   }
 </style>
 </head>
@@ -1155,6 +1208,7 @@
     <li><a href="#curriculum">课程表</a></li>
     <li><a href="#stories">学员故事</a></li>
     <li><a href="#gallery">竞赛现场</a></li>
+    <li><a href="#achievements">荣誉殿堂</a></li>
     <li><a href="#competitions">竞赛导航</a></li>
   </ul>
   <a href="#cta" class="nav-cta">立即报名 →</a>
@@ -1727,6 +1781,148 @@
           <div class="section-tag">Competition Navigator</div>
           <h2 class="section-title">AI 竞赛<span>导航地图</span></h2>
           <p class="section-desc">课程结束即可直接冲击这些舞台，覆盖 8-大学全年龄段。</p>
+        </div>
+
+        <!-- ACHIEVEMENTS HALL -->
+        <div class="achievements-table-wrap">
+          <div class="achievements-header-bar">
+            <div class="ahb-cell">年份 / Year</div>
+            <div class="ahb-cell">赛事与荣誉 / Events & Honors</div>
+            <div class="ahb-cell">核心成就 / Key Achievements</div>
+            <div class="ahb-cell">实拍 / Photo</div>
+          </div>
+
+          <div class="achievements-table">
+
+            <!-- Row 1: NASA Space Apps -->
+            <div class="at-row">
+              <div class="at-cell">
+                <div class="at-year">2021–2026</div>
+                <div class="at-desc">NASA Space Apps Challenge</div>
+              </div>
+              <div class="at-cell">
+                <div class="at-highlights">
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot red"></span>
+                    <span>32 支赛队斩获<strong style="color:var(--gold)">全球题目奖</strong></span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot gold"></span>
+                    <span>8 次荣登<strong style="color:var(--gold)">世界前60</strong></span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot orange"></span>
+                    <span>1 次挺进<strong style="color:var(--orange)">世界前十</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="at-cell">
+                <div class="at-highlights">
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot purple"></span>
+                    <span>超 10 名学生成为关键项目组实习生</span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot cyan"></span>
+                    <span>2025 年火星项目实习生与<strong style="color:var(--cyan)">诺贝尔获奖科学家</strong>同会</span>
+                  </div>
+                </div>
+              </div>
+              <div class="at-img-cell">
+                <div class="at-img-placeholder" onclick="alert('请上传 NASA 获奖证书或团队照片')">📷<br>上传照片</div>
+              </div>
+            </div>
+
+            <!-- Row 2: Stanford BEHAVIOR -->
+            <div class="at-row">
+              <div class="at-cell">
+                <div class="at-year">2025</div>
+                <div class="at-desc">Stanford Humanoid Challenge</div>
+              </div>
+              <div class="at-cell" style="grid-column: 1 / -1;">
+                <div class="at-highlights">
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot cyan"></span>
+                    <span>从 <strong style="color:var(--text)">1000+</strong> 参赛单位中脱颖而出，与世界顶级科研机构并肩</span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot gold"></span>
+                    <span>同台机构：<strong style="color:var(--text)">华为 / 英伟达 / 斯坦福 / CMU / 清华</strong></span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot red"></span>
+                    <span>荣登 <strong style="color:#D32F2F">全球 Lead Board 第18名</strong> 🏆</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Row 3: Caltech + VEX Worlds -->
+            <div class="at-row">
+              <div class="at-cell">
+                <div class="at-year">2025</div>
+                <div class="at-desc">Caltech AI Robotics Open<br>+ VEX Worlds</div>
+              </div>
+              <div class="at-cell">
+                <div class="at-highlights">
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot gold"></span>
+                    <span><strong style="color:var(--gold)">自主举办</strong>加州理工 AI 机器人国际公开赛</span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot orange"></span>
+                    <span>2025 VEX 世锦赛：<strong style="color:var(--orange)">第4名、第8名 + 创新奖</strong></span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot cyan"></span>
+                    <span>7 支赛队与大学生同场，<strong style="color:var(--cyan)">首次晋级世界舞台</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="at-cell">
+                <div class="at-highlights">
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot red"></span>
+                    <span>2026 年 6 月：<strong style="color:#D32F2F">12 支赛队</strong>出征伯克利 AI 机器人世锦赛</span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot purple"></span>
+                    <span>2026 年举办<strong style="color:#CE93D8">硅谷 Inno Valley AI 机器人国际公开赛</strong></span>
+                  </div>
+                </div>
+              </div>
+              <div class="at-img-cell">
+                <div class="at-img-placeholder" onclick="alert('请上传 Caltech 公开赛现场照片')">📷<br>上传照片</div>
+              </div>
+            </div>
+
+            <!-- Row 4: Startups 2026-2027 -->
+            <div class="at-row" style="background: rgba(255,193,7,0.03);">
+              <div class="at-cell">
+                <div class="at-year">2026–2027</div>
+                <div class="at-desc">Startup Ventures</div>
+              </div>
+              <div class="at-cell" style="grid-column: 1 / -1;">
+                <div class="at-highlights">
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot gold"></span>
+                    <span><strong style="color:var(--gold)">3 支大学生/高中生创业团队</strong>正式成立，进军 AI 机器人领域</span>
+                  </div>
+                  <div class="at-highlight-item">
+                    <span class="at-highlight-dot cyan"></span>
+                    <span>覆盖高中 → 大学 → 创业全周期，<strong style="color:var(--cyan)">MAGIKID 生态闭环</strong>已成型</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div style="padding: 16px 24px; border-top: 1px solid rgba(255,255,255,0.06); text-align: center;">
+            <p style="color: var(--text-dim); font-size: 13px;">
+              📸 点击「上传照片」上传您的获奖证书/现场照 ·
+              <a href="#cta" style="color: var(--gold); font-weight: 700;">加入 MAGIKID，下一个故事的主角就是你 →</a>
+            </p>
+          </div>
         </div>
 
         <!-- Age filter chips -->
