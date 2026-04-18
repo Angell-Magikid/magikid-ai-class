@@ -1681,6 +1681,13 @@
           <p class="section-desc">课程结束即可直接冲击这些舞台，覆盖 8-大学全年龄段。</p>
         </div>
 
+        <!-- Age filter chips -->
+        <div class="comp-filter" id="compFilter">
+          <button class="filter-btn active" onclick="filterComps(this, 'all')">全部 All</button>
+          <button class="filter-btn" onclick="filterComps(this, 'mid')">初中 Mid School</button>
+          <button class="filter-btn" onclick="filterComps(this, 'high')">高中 High School</button>
+        </div>
+
         <!-- Competition-to-Curriculum Mapping Table -->
         <div class="mapping-table-wrap">
           <div class="mapping-title">
@@ -1804,13 +1811,6 @@
             <span class="note-icon">💡</span>
             <span>选课路径：先完成基础阶段课程，再根据目标赛事选择对应的 Elite 专项深化方向</span>
           </div>
-        </div>
-
-        <!-- Age filter chips -->
-        <div class="comp-filter" id="compFilter">
-          <button class="filter-btn active" onclick="filterComps(this, 'all')">全部 All</button>
-          <button class="filter-btn" onclick="filterComps(this, 'mid')">初中 Mid School</button>
-          <button class="filter-btn" onclick="filterComps(this, 'high')">高中 High School</button>
         </div>
 
         <div class="comp-grid" id="compGrid">
