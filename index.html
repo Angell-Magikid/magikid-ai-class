@@ -6,20 +6,21 @@
 <title>MAGIKID AI Olympia 竞赛班 | AI Elite Program</title>
 <style>
   :root {
-    --gold: #FFD700;
-    --gold-light: #FFE566;
-    --cyan: #00E5FF;
-    --dark: #0A0E1A;
-    --dark2: #0F1629;
-    --dark3: #161E35;
-    --card: #1A2340;
-    --card2: #1E2A45;
-    --text: #E8EAF0;
-    --text-dim: #8A9BB8;
-    --red: #E53935;
-    --green: #00E676;
-    --purple: #9C27B0;
-    --orange: #FF6D00;
+    --gold: #FFC107;
+    --gold-light: #FFD54F;
+    --cyan: #00AEEF;
+    --dark: #000000;
+    --dark2: #0D0D0D;
+    --dark3: #1A1A1A;
+    --card: #111111;
+    --card2: #1A1A1A;
+    --text: #FFFFFF;
+    --text-dim: #AAAAAA;
+    --red: #D32F2F;
+    --green: #4CAF50;
+    --purple: #7B1FA2;
+    --orange: #FF5722;
+    --white: #FFFFFF;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -99,10 +100,13 @@
   .hero-content { position: relative; z-index: 2; max-width: 900px; }
   .hero-badge {
     display: inline-block;
-    background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.3);
-    color: var(--gold); padding: 6px 18px; border-radius: 20px;
+    background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.3);
+    color: #fff; padding: 6px 18px; border-radius: 20px;
     font-size: 13px; font-weight: 600; letter-spacing: 2px;
-    margin-bottom: 24px; text-transform: uppercase;
+    margin-bottom: 16px; text-transform: uppercase;
+  }
+  .hero-logo {
+    height: 60px; margin-bottom: 20px;
   }
   .hero h1 {
     font-size: clamp(36px, 6vw, 72px);
@@ -982,7 +986,7 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">MAGIKID.AI</div>
+  <a href="#" class="nav-logo"><img src="images/magikid-logo.png" alt="MAGIKID" height="36"></a>
     <ul class="nav-links">
     <li><a href="#overview">课程体系</a></li>
     <li><a href="#curriculum">课程表</a></li>
@@ -999,6 +1003,7 @@
   <div class="hero-grid"></div>
   <div class="hero-content">
     <div class="hero-badge">🏆 AI Elite Competition Program</div>
+    <img src="images/magikid-logo.png" alt="MAGIKID" class="hero-logo">
     <h1>
       <span class="gold">AI Olympia</span> ×<br>
       <span class="cyan">MAGIKID</span><br>
@@ -1732,7 +1737,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">MAGIKID.AI</div>
+  <div class="footer-logo"><img src="images/magikid-logo.png" alt="MAGIKID" height="32"></div>
   <div class="footer-tagline">冠军基因 · 规模化 · 让每个孩子都能站上国际 AI 赛场</div>
     <div class="footer-links">
     <a href="#overview">课程体系</a>
