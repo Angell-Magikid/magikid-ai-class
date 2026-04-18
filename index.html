@@ -527,6 +527,54 @@
   }
   .comp-tag.org { background: rgba(0,229,255,0.08); color: var(--cyan); font-size: 10px; }
   .comp-desc { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+  .comp-prereq {
+    display: flex; align-items: center; gap: 8px;
+    margin-top: 12px; padding: 10px 14px;
+    background: rgba(255,215,0,0.06);
+    border: 1px solid rgba(255,215,0,0.15);
+    border-radius: 10px;
+    font-size: 12px; color: var(--text-dim);
+  }
+  .comp-prereq-icon { font-size: 14px; }
+  .comp-prereq-label { color: var(--gold); font-weight: 600; }
+  .comp-training {
+    margin-top: 14px; padding: 14px;
+    background: rgba(0,174,239,0.05);
+    border: 1px solid rgba(0,174,239,0.12);
+    border-radius: 12px;
+  }
+  .comp-training-header {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 12px; font-size: 12px; font-weight: 700;
+    color: var(--cyan);
+  }
+  .comp-training-header .icon { font-size: 16px; }
+  .comp-training-hours {
+    display: inline-block; margin-left: auto;
+    padding: 2px 10px; border-radius: 10px;
+    background: rgba(0,174,239,0.15); color: var(--cyan);
+    font-size: 11px; font-weight: 700;
+  }
+  .comp-camp-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .comp-camp-item {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-size: 12px; color: var(--text-dim); line-height: 1.5;
+  }
+  .comp-camp-dot {
+    width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 5px;
+  }
+  .comp-camp-dot.dot-red { background: #D32F2F; }
+  .comp-camp-dot.dot-cyan { background: var(--cyan); }
+  .comp-camp-dot.dot-gold { background: var(--gold); }
+  .comp-camp-dot.dot-orange { background: var(--orange); }
+  .comp-cta-btn {
+    display: block; text-align: center; margin-top: 14px; padding: 9px;
+    background: linear-gradient(135deg, rgba(0,174,239,0.15), rgba(0,174,239,0.08));
+    border: 1px solid rgba(0,174,239,0.25); border-radius: 10px;
+    font-size: 12px; font-weight: 700; color: var(--cyan);
+    text-decoration: none; transition: all 0.2s;
+  }
+  .comp-cta-btn:hover { background: rgba(0,174,239,0.2); border-color: var(--cyan); }
 
   /* ===== MAPPING TABLE ===== */
   .mapping-table-wrap {
@@ -1830,6 +1878,24 @@
             <div class="comp-desc">
               全球最高级别高中 AI 奥林匹克，聚焦算法解题与 AI 创新应用。Jerry 已在斯洛文尼亚代表 Team USA 夺冠，全球排名 No.1。
             </div>
+            <div class="comp-prereq">
+              <span class="comp-prereq-icon">📚</span>
+              <span class="comp-prereq-label">前置课程：</span>
+              <span>Elite 1 & 2 · 深度学习 / 模型调优 / NLP & CV 算法</span>
+            </div>
+            <div class="comp-training">
+              <div class="comp-training-header">
+                <span class="icon">🔥</span>
+                <span>赛前一站式训练营</span>
+                <span class="comp-training-hours">24 节课时</span>
+              </div>
+              <ul class="comp-camp-list">
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-red"></span><div><strong>Scientific Challenge 模拟 (12节)</strong><br>限时阅读前沿 AI 论文并复现算法</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-orange"></span><div><strong>算法冲刺 (8节)</strong><br>强化模型融合、超参数搜索与极端数据集处理</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>Poster 答辩演练 (4节)</strong><br>斯洛文尼亚赛制 Poster 制作与英文答辩</div></li>
+              </ul>
+            </div>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
           </div>
 
           <!-- AI Olympia -->
@@ -1847,6 +1913,24 @@
             <div class="comp-desc">
               汇聚全球最优秀青年，共同挑战理论与实践 AI 双重任务。2026 年赛于 2 月 23–27 日在斯洛文尼亚卢布尔雅那举办。
             </div>
+            <div class="comp-prereq">
+              <span class="comp-prereq-icon">📚</span>
+              <span class="comp-prereq-label">前置课程：</span>
+              <span>Elite 1 & 2 · 深度学习 / 模型调优 / NLP & CV 算法</span>
+            </div>
+            <div class="comp-training">
+              <div class="comp-training-header">
+                <span class="icon">🔥</span>
+                <span>赛前一站式训练营</span>
+                <span class="comp-training-hours">24 节课时</span>
+              </div>
+              <ul class="comp-camp-list">
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-red"></span><div><strong>Scientific Challenge 模拟 (12节)</strong><br>限时阅读前沿 AI 论文并复现算法</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-orange"></span><div><strong>算法冲刺 (8节)</strong><br>强化模型融合、超参数搜索与极端数据集处理</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>Poster 答辩演练 (4节)</strong><br>斯洛文尼亚赛制 Poster 制作与英文答辩</div></li>
+              </ul>
+            </div>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
           </div>
 
           <!-- VEX AI Competition -->
@@ -1864,6 +1948,24 @@
             <div class="comp-desc">
               高级 AI 机器人竞赛，考察自动驾驶、计算机视觉与算法策略，与 MAGIKID 机器人课程深度衔接。
             </div>
+            <div class="comp-prereq">
+              <span class="comp-prereq-icon">📚</span>
+              <span class="comp-prereq-label">前置课程：</span>
+              <span>Elite 1（含 ROS 2 模块）· Visionary & Elite 1</span>
+            </div>
+            <div class="comp-training">
+              <div class="comp-training-header">
+                <span class="icon">🤖</span>
+                <span>具身智能专项训练营</span>
+                <span class="comp-training-hours">18 节课时</span>
+              </div>
+              <ul class="comp-camp-list">
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-cyan"></span><div><strong>自动驾驶策略 (6节)</strong><br>视觉 SLAM 导航与 PID 闭环控制</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-cyan"></span><div><strong>Isaac Sim 仿真迁移 (8节)</strong><br>针对 BEHAVIOR 任务的 Sim-to-Real 训练</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>多机协同 (4节)</strong><br>双机通信与策略博弈实战</div></li>
+              </ul>
+            </div>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
           </div>
 
           <!-- Zero Robotics -->
@@ -1881,6 +1983,24 @@
             <div class="comp-desc">
               在国际空间站真实机器人上编程，完成自主太空任务。MIT + NASA 联合背书，含金量极高。
             </div>
+            <div class="comp-prereq">
+              <span class="comp-prereq-icon">📚</span>
+              <span class="comp-prereq-label">前置课程：</span>
+              <span>Explorer & Elite 2 · API 集成 / LLM 微调 / 数据科学</span>
+            </div>
+            <div class="comp-training">
+              <div class="comp-training-header">
+                <span class="icon">🚀</span>
+                <span>太空机器人黑客松训练营</span>
+                <span class="comp-training-hours">12 节课时</span>
+              </div>
+              <ul class="comp-camp-list">
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>NASA 开放数据处理 (4节)</strong><br>卫星影像解析与太空遥测数据处理</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-cyan"></span><div><strong>MVP 快速开发 (4节)</strong><br>LLM API 原型构建与代码快速迭代</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>方案策划与社会影响论证 (4节)</strong><br>社会意义陈述与技术方案呈现</div></li>
+              </ul>
+            </div>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
           </div>
 
           <!-- BEHAVIOR Challenge -->
@@ -1898,6 +2018,24 @@
             <div class="comp-desc">
               斯坦福前沿人形机器人模拟挑战，聚焦 Embodied AI（具身智能），解决复杂家务任务。
             </div>
+            <div class="comp-prereq">
+              <span class="comp-prereq-icon">📚</span>
+              <span class="comp-prereq-label">前置课程：</span>
+              <span>Elite 1（含 ROS 2 模块）· Visionary & Elite 1</span>
+            </div>
+            <div class="comp-training">
+              <div class="comp-training-header">
+                <span class="icon">🦾</span>
+                <span>具身智能专项训练营</span>
+                <span class="comp-training-hours">18 节课时</span>
+              </div>
+              <ul class="comp-camp-list">
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-cyan"></span><div><strong>自动驾驶策略 (6节)</strong><br>视觉 SLAM 导航与 PID 闭环控制</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-cyan"></span><div><strong>Isaac Sim 仿真迁移 (8节)</strong><br>针对 BEHAVIOR 任务的 Sim-to-Real 训练</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>多机协同 (4节)</strong><br>双机通信与策略博弈实战</div></li>
+              </ul>
+            </div>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
           </div>
 
           <!-- Presidential AI Challenge -->
@@ -1915,6 +2053,24 @@
             <div class="comp-desc">
               美国官方发起的全国性 AI 挑战赛，鼓励学生为社区与教育问题设计真实 AI 解决方案。
             </div>
+            <div class="comp-prereq">
+              <span class="comp-prereq-icon">📚</span>
+              <span class="comp-prereq-label">前置课程：</span>
+              <span>Explorer & Elite 2 · API 集成 / LLM 微调 / 数据科学</span>
+            </div>
+            <div class="comp-training">
+              <div class="comp-training-header">
+                <span class="icon">🏛️</span>
+                <span>黑客松一站式训练营</span>
+                <span class="comp-training-hours">12 节课时</span>
+              </div>
+              <ul class="comp-camp-list">
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>NASA 开放数据处理 (4节)</strong><br>卫星影像解析与太空遥测数据处理</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-cyan"></span><div><strong>MVP 快速开发 (4节)</strong><br>LLM API 原型构建与代码快速迭代</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>社会影响力陈述 (4节)</strong><br>方案策划与社会意义论证</div></li>
+              </ul>
+            </div>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
           </div>
 
           <!-- NASA Space Apps -->
@@ -1932,6 +2088,24 @@
             <div class="comp-desc">
               全球规模最大的 hackathon，使用 NASA 开放数据解决地球与太空问题，AI 创新赛道正当时。
             </div>
+            <div class="comp-prereq">
+              <span class="comp-prereq-icon">📚</span>
+              <span class="comp-prereq-label">前置课程：</span>
+              <span>Explorer & Elite 2 · API 集成 / LLM 微调 / 数据科学</span>
+            </div>
+            <div class="comp-training">
+              <div class="comp-training-header">
+                <span class="icon">🌌</span>
+                <span>黑客松一站式训练营</span>
+                <span class="comp-training-hours">12 节课时</span>
+              </div>
+              <ul class="comp-camp-list">
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>NASA 开放数据处理 (4节)</strong><br>卫星影像解析与太空遥测数据处理</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-cyan"></span><div><strong>MVP 快速开发 (4节)</strong><br>LLM API 原型构建与代码快速迭代</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>社会影响力陈述 (4节)</strong><br>方案策划与社会意义论证</div></li>
+              </ul>
+            </div>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
           </div>
 
           <!-- Kaggle -->
@@ -1949,6 +2123,24 @@
             <div class="comp-desc">
               全球最大数据科学与机器学习平台，解决工业级 AI 问题。完赛记录与名次可直接写入大学申请履历。
             </div>
+            <div class="comp-prereq">
+              <span class="comp-prereq-icon">📚</span>
+              <span class="comp-prereq-label">前置课程：</span>
+              <span>Elite 1 · 深度学习基础 / PyTorch / 特征工程入门</span>
+            </div>
+            <div class="comp-training">
+              <div class="comp-training-header">
+                <span class="icon">📊</span>
+                <span>工业级实战训练营</span>
+                <span class="comp-training-hours">10 节课时</span>
+              </div>
+              <ul class="comp-camp-list">
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-orange"></span><div><strong>特征工程进阶 (4节)</strong><br>处理 Tabular Data 的高级技巧与特征选择</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-cyan"></span><div><strong>模型堆叠 (4节)</strong><br>XGBoost、LightGBM 与神经网络混合建模</div></li>
+                <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>Pipeline 自动化 (2节)</strong><br>高效实验记录与代码流水线管理</div></li>
+              </ul>
+            </div>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
           </div>
 
         </div>
