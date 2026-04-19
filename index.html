@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MAGIKID AI Olympia 竞赛班 | AI Elite Program</title>
+<title>MAGIKID AI Olympia <span data-i18n="mob_comp">竞赛</span>班 | AI Elite Program</title>
 <style>
   :root {
     --gold: #FFC107;
@@ -1239,6 +1239,131 @@
     body { padding-bottom: 70px; }
   }
 </style>
+
+<style>
+.lang-switcher {
+  display: flex;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 2px;
+  gap: 2px;
+}
+.lang-btn {
+  padding: 6px 14px;
+  border: none;
+  border-radius: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  background: transparent;
+  color: var(--text-dim);
+}
+.lang-btn.active {
+  background: linear-gradient(135deg, var(--gold), #FFA000);
+  color: #000;
+}
+</style>
+<script>
+const i18n = {
+  // 导航
+  nav_home: { zh: '<span data-i18n="mob_home">首页</span>', en: 'Home' },
+  nav_course: { zh: '<span data-i18n="mob_course">课程</span>体系', en: 'Curriculum' },
+  nav_schedule: { zh: '<span data-i18n="mob_course">课程</span>安排', en: 'Schedule' },
+  nav_students: { zh: '<span data-i18n="mob_students">学员</span>成就', en: 'Students' },
+  nav_competitions: { zh: '<span data-i18n="mob_comp">竞赛</span>荣誉', en: 'Competitions' },
+  nav_enroll: { zh: '立即<span data-i18n="mob_enroll">报名</span>', en: 'Enroll Now' },
+  
+  // Hero
+  hero_badge: { zh: '🎓 MAGIKID 2026 精英计划', en: '🎓 MAGIKID 2026 Elite Program' },
+  hero_title: { zh: '<span data-i18n="hero_title">MAGIKID AI <span data-i18n="mob_comp">竞赛</span>班</span>', en: 'MAGIKID AI Competition Class' },
+  hero_sub: { zh: '<span data-i18n="hero_sub">通往常春藤与斯坦福的AI竞技之路</span>', en: 'Your Path to Ivy League & Stanford via AI Competition' },
+  hero_desc: { zh: '<span data-i18n="hero_desc">培养下一代AI领袖，从这里开始</span>', en: 'Cultivating Next-Gen AI Leaders' },
+  hero_cta: { zh: '<span data-i18n="hero_cta">开启AI之旅</span>', en: 'Start Your AI Journey' },
+  hero_stats_students: { zh: '优秀<span data-i18n="mob_students">学员</span>', en: 'Elite Students' },
+  hero_stats_medals: { zh: '国际奖项', en: 'Intl Medals' },
+  hero_stats_top: { zh: '顶尖录取', en: 'Top Admissions' },
+  hero_stats_nasa: { zh: 'NASA挑战', en: 'NASA Challenges' },
+  
+  // <span data-i18n="mob_course">课程</span>体系
+  course_title: { zh: '<span data-i18n="course_title">🚀 <span data-i18n="mob_course">课程</span>体系</span>', en: '🚀 Curriculum System' },
+  course_sub: { zh: '<span data-i18n="course_sub">5阶段递进式AI精英培养</span>', en: '5-Stage Progressive AI Elite Training' },
+  course_explore: { zh: '<span data-i18n="course_explore">探索者</span>', en: 'Explorer' },
+  course_innovator: { zh: '<span data-i18n="course_innovator">创新者</span>', en: 'Innovator' },
+  course_challenger: { zh: '<span data-i18n="course_challenger">挑战者</span>', en: 'Challenger' },
+  course_master: { zh: '<span data-i18n="course_master">大师</span>', en: 'Master' },
+  course_specialist: { zh: '<span data-i18n="course_specialist">专家</span>', en: 'Specialist' },
+  
+  // 赛道表格
+  track_title: { zh: '<span data-i18n="track_title">🎯 赛道 · 赛事 · 核心<span data-i18n="mob_course">课程</span></span>', en: '🎯 Track · Competition · Core Curriculum' },
+  track_a: { zh: '<span data-i18n="track_a">赛道A：算法与奥赛类</span>', en: 'Track A: Algorithm & Olympiad' },
+  track_b: { zh: '<span data-i18n="track_b">赛道B：具身智能与机器人类</span>', en: 'Track B: Embodied Intelligence & Robotics' },
+  track_c: { zh: '<span data-i18n="track_c">赛道C：系统集成与黑客松类</span>', en: 'Track C: System Integration & Hackathons' },
+  track_col1: { zh: '赛道分类', en: 'Track' },
+  track_col2: { zh: '目标赛事', en: 'Target Competitions' },
+  track_col3: { zh: '核心依赖<span data-i18n="mob_course">课程</span>阶段', en: 'Prerequisite Courses' },
+  track_col4: { zh: 'MAGIKID成就', en: 'MAGIKID Achievements' },
+  
+  // <span data-i18n="mob_students">学员</span>荣耀
+  gallery_title: { zh: '<span data-i18n="gallery_title">🌟 <span data-i18n="mob_students">学员</span>荣耀 2026</span>', en: '🌟 Student Glory 2026' },
+  gallery_world: { zh: '<span data-i18n="gallery_world">🏆 World Stage</span>', en: '<span data-i18n="gallery_world">🏆 World Stage</span>' },
+  gallery_students: { zh: '<span data-i18n="gallery_students">MAGIKID 赛队 · 全球 AI <span data-i18n="mob_comp">竞赛</span>现场</span>', en: 'MAGIKID Teams · Global AI Competition' },
+  gallery_achieve: { zh: '🏅 Achievement', en: '🏅 Achievement' },
+  
+  // 底部
+  footer_join: { zh: '<span data-i18n="footer_join">加入我们</span>', en: 'Join Us' },
+  footer_contact: { zh: '<span data-i18n="footer_contact">联系我们</span>', en: 'Contact Us' },
+  footer_location: { zh: '<span data-i18n="footer_location">加州·硅谷 | 德州·达拉斯</span>', en: 'California · Silicon Valley | Texas · Dallas' },
+  footer_rights: { zh: '© 2026 MAGIKID Lab. All Rights Reserved.', en: '© 2026 MAGIKID Lab. All Rights Reserved.' },
+  footer_note: { zh: '<span data-i18n="footer_note">MAGIKID Lab 保留法律追究权利</span>', en: 'MAGIKID Lab reserves all legal rights' },
+  
+  // 移动端导航
+  mob_home: { zh: '<span data-i18n="mob_home">首页</span>', en: 'Home' },
+  mob_course: { zh: '<span data-i18n="mob_course">课程</span>', en: 'Course' },
+  mob_students: { zh: '<span data-i18n="mob_students">学员</span>', en: 'Students' },
+  mob_comp: { zh: '<span data-i18n="mob_comp">竞赛</span>', en: 'Comp' },
+  mob_enroll: { zh: '<span data-i18n="mob_enroll">报名</span>', en: 'Enroll' },
+};
+
+let currentLang = 'zh';
+
+function switchLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  
+  // 更新按钮状态
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+  
+  // 更新所有带data-i18n的元素
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (i18n[key] && i18n[key][lang]) {
+      el.textContent = i18n[key][lang];
+    }
+  });
+  
+  // 更新带data-i18n-html的元素（支持HTML）
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if (i18n[key] && i18n[key][lang]) {
+      el.innerHTML = i18n[key][lang];
+    }
+  });
+  
+  // 存储选择
+  localStorage.setItem('magikid-lang', lang);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // 恢复语言选择
+  const saved = localStorage.getItem('magikid-lang');
+  if (saved) {
+    switchLang(saved);
+  }
+});
+</script>
 </head>
 <body>
 
@@ -1246,13 +1371,13 @@
 <nav>
   <a href="#" class="nav-logo"><img src="images/magikid-logo.png" alt="MAGIKID" height="36"></a>
   <ul class="nav-links">
-    <li><a href="#overview">课程体系</a></li>
-    <li><a href="#curriculum">课程表</a></li>
-    <li><a href="#stories">学员故事</a></li>
-    <li><a href="#gallery">竞赛现场</a></li>
-    <li><a href="#competitions">竞赛导航</a></li>
+    <li><a href="#overview"><span data-i18n="nav_course"><span data-i18n="mob_course">课程</span>体系</span></a></li>
+    <li><a href="#curriculum"><span data-i18n="mob_course">课程</span>表</a></li>
+    <li><a href="#stories"><span data-i18n="mob_students">学员</span>故事</a></li>
+    <li><a href="#gallery"><span data-i18n="mob_comp">竞赛</span>现场</a></li>
+    <li><a href="#competitions"><span data-i18n="mob_comp">竞赛</span>导航</a></li>
   </ul>
-  <a href="#cta" class="nav-cta">立即报名 →</a>
+  <a href="#cta" class="nav-cta">立即<span data-i18n="mob_enroll">报名</span> →</a>
 </nav>
 
 <!-- HERO -->
@@ -1265,15 +1390,15 @@
     <h1>
       <span class="gold">AI Olympia</span> ×<br>
       <span class="cyan">MAGIKID</span><br>
-      竞赛精英培训班
+      <span data-i18n="mob_comp">竞赛</span>精英培训班
     </h1>
     <p class="hero-sub">
       36×5 课时 · 从零到赛场 · <em>理论 + 竞技 + 科研</em> 三位一体<br>
       让每一个孩子都能站上<em>国际AI竞技舞台</em>
     </p>
     <div class="hero-btns">
-      <a href="#cta" class="btn-primary">🚀 立即报名</a>
-      <a href="#curriculum" class="btn-secondary">查看课程表 ↓</a>
+      <a href="#cta" class="btn-primary">🚀 立即<span data-i18n="mob_enroll">报名</span></a>
+      <a href="#curriculum" class="btn-secondary">查看<span data-i18n="mob_course">课程</span>表 ↓</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1286,11 +1411,11 @@
 <section class="intro-banner">
   <div class="intro-content">
     <h2>
-      <span class="highlight-gold">MAGIKID</span> 独家 AI 机器人课程，<br>
+      <span class="highlight-gold">MAGIKID</span> 独家 AI 机器人<span data-i18n="mob_course">课程</span>，<br>
       培养<span class="highlight-cyan">卓越顶尖</span>的 AI 机器人人才
     </h2>
     <p style="color: var(--text-dim); font-size: 15px; line-height: 1.8; max-width: 760px; margin: 0 auto;">
-      2026 年课程升级，不仅对标 <strong style="color:var(--gold)">IOAI（人工智能奥林匹克）</strong>，
+      2026 年<span data-i18n="mob_course">课程</span>升级，不仅对标 <strong style="color:var(--gold)">IOAI（人工智能奥林匹克）</strong>，
       更是一场面向全球 AI 黑客松与尖端机器人赛事的进阶之旅。
       我们紧跟技术浪潮，实时集成
       <strong style="color:var(--cyan)">Generative AI（生成式AI）</strong>、
@@ -1332,7 +1457,7 @@
     <div class="stat-card">
       <div class="stat-icon">📚</div>
       <div class="stat-num">36×5</div>
-      <div class="stat-label">课程体系<br><span style="font-size:11px;color:var(--text-dim)">共 180 节</span></div>
+      <div class="stat-label"><span data-i18n="nav_course"><span data-i18n="mob_course">课程</span>体系</span><br><span style="font-size:11px;color:var(--text-dim)">共 180 节</span></div>
     </div>
     <div class="stat-card">
       <div class="stat-icon">⚡</div>
@@ -1411,7 +1536,7 @@
           <p class="section-desc">5阶段 × 36节课 × 90分钟 | 算法深度 : 机器人应用 = 2 : 1</p>
         </div>
 
-        <!-- 课程体系概览表格 -->
+        <!-- <span data-i18n="mob_course">课程</span>体系概览表格 -->
         <div class="curriculum-overview">
           <table class="overview-table">
             <thead>
@@ -1623,7 +1748,7 @@
               <div class="sem-title">高级视觉与目标检测专项</div>
               <div class="sem-items">
                 <div class="sem-item"><span class="si-num">L1–L8</span><span class="si-tag alg-tag">算法</span><span class="si-desc">YOLO 系列深度解析；语义分割与实例分割；针对 IOAI 赛题的特征提取策略</span></div>
-                <div class="sem-item"><span class="si-num">L9–L12</span><span class="si-tag contest-tag">竞赛</span><span class="si-desc">模拟赛 (I)：限定时间内完成大规模数据集的目标识别与分类任务</span></div>
+                <div class="sem-item"><span class="si-num">L9–L12</span><span class="si-tag contest-tag"><span data-i18n="mob_comp">竞赛</span></span><span class="si-desc">模拟赛 (I)：限定时间内完成大规模数据集的目标识别与分类任务</span></div>
               </div>
             </div>
             <div class="sem-card">
@@ -1631,7 +1756,7 @@
               <div class="sem-title">NLP 与大模型竞技</div>
               <div class="sem-items">
                 <div class="sem-item"><span class="si-num">L13–L20</span><span class="si-tag alg-tag">算法</span><span class="si-desc">Transformer 架构；注意力机制数学推导；LLM 微调与 Prompt 策略</span></div>
-                <div class="sem-item"><span class="si-num">L21–L24</span><span class="si-tag contest-tag">竞赛</span><span class="si-desc">模拟赛 (II)：基于给定文本/对话数据集的语义分析与逻辑推理挑战</span></div>
+                <div class="sem-item"><span class="si-num">L21–L24</span><span class="si-tag contest-tag"><span data-i18n="mob_comp">竞赛</span></span><span class="si-desc">模拟赛 (II)：基于给定文本/对话数据集的语义分析与逻辑推理挑战</span></div>
               </div>
             </div>
             <div class="sem-card">
@@ -1685,7 +1810,7 @@
         <div class="table-note-box">
           <span class="note-icon">🎯</span>
           <div>
-            <strong>完成每级课程后：</strong>颁发 <em>MAGIKID AI Olympiad 课程认证</em>，
+            <strong>完成每级<span data-i18n="mob_course">课程</span>后：</strong>颁发 <em>MAGIKID AI Olympiad <span data-i18n="mob_course">课程</span>认证</em>，
             成绩优异者直荐参加 <em>IOAI 国际赛</em>、<em>Regeneron ISEF</em>、
             <em>Caltech AI Open</em> 等顶级舞台。
           </div>
@@ -1698,7 +1823,7 @@
       <div class="container">
         <div class="section-header">
           <div class="section-tag">Champion Stories</div>
-          <h2 class="section-title">学员<span>荣耀 2026</span></h2>
+          <h2 class="section-title"><span data-i18n="mob_students">学员</span><span>荣耀 2026</span></h2>
           <p class="section-desc">从 MAGIKID 课堂出发，走上世界赛场，叩响顶尖名校的大门。</p>
         </div>
 
@@ -1724,7 +1849,7 @@
                 </div>
                 <div class="achievement-row">
                   <span class="achievement-icon">🤖</span>
-                  <span class="achievement-text"><strong>VEX IQ Robotics</strong> Innovate Division 机器人竞赛冠军</span>
+                  <span class="achievement-text"><strong>VEX IQ Robotics</strong> Innovate Division 机器人<span data-i18n="mob_comp">竞赛</span>冠军</span>
                 </div>
                 <div class="achievement-row">
                   <span class="achievement-icon">🎯</span>
@@ -1784,7 +1909,7 @@
 
     <div style="text-align:center; margin-top: 40px;">
       <p style="color: var(--text-dim); font-size: 14px; margin-bottom: 16px;">你的孩子，也可以成为下一个故事的主角。</p>
-      <a href="#cta" class="btn-primary">🌟 开启 AI 竞赛之路</a>
+      <a href="#cta" class="btn-primary">🌟 开启 AI <span data-i18n="mob_comp">竞赛</span>之路</a>
     </div>
   </div>
 </section>
@@ -1795,14 +1920,14 @@
     <div class="section-header">
       <div class="section-tag">Competition Gallery</div>
       <h2 class="section-title">赛场<span>精彩瞬间</span></h2>
-      <p class="section-desc">MAGIKID 学员征战全球赛场，用实力书写属于自己的科技故事。</p>
+      <p class="section-desc">MAGIKID <span data-i18n="mob_students">学员</span>征战全球赛场，用实力书写属于自己的科技故事。</p>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item" style="grid-column: 1 / -1;">
         <img src="images/Competition.png" alt="MAGIKID Competition Scene">
         <div class="gallery-overlay">
-          <div class="gallery-tag">🏆 World Stage</div>
-          <div class="gallery-caption">MAGIKID 赛队 · 全球 AI 竞赛现场</div>
+          <div class="gallery-tag"><span data-i18n="gallery_world">🏆 World Stage</span></div>
+          <div class="gallery-caption"><span data-i18n="gallery_students">MAGIKID 赛队 · 全球 AI <span data-i18n="mob_comp">竞赛</span>现场</span></div>
         </div>
       </div>
     </div>
@@ -1820,8 +1945,8 @@
       <div class="container">
         <div class="section-header">
           <div class="section-tag">Competition Navigator</div>
-          <h2 class="section-title">AI 竞赛<span>导航地图</span></h2>
-          <p class="section-desc">课程结束即可直接冲击这些舞台，覆盖 8-大学全年龄段。</p>
+          <h2 class="section-title">AI <span data-i18n="mob_comp">竞赛</span><span>导航地图</span></h2>
+          <p class="section-desc"><span data-i18n="mob_course">课程</span>结束即可直接冲击这些舞台，覆盖 8-大学全年龄段。</p>
         </div>
 
         <!-- Age filter chips -->
@@ -1835,14 +1960,14 @@
         <div class="mapping-table-wrap">
           <div class="mapping-title">
             <span class="mapping-icon">🗺️</span>
-            <span>赛道 · 赛事 · 核心依赖课程阶段</span>
+            <span>赛道 · 赛事 · 核心依赖<span data-i18n="mob_course">课程</span>阶段</span>
           </div>
           <div class="mapping-table">
             <div class="mapping-header">
-              <div class="mh-col mh-track">赛道分类</div>
-              <div class="mh-col mh-comp">目标赛事</div>
-              <div class="mh-col mh-base">核心依赖课程阶段</div>
-              <div class="mh-col mh-achieve">MAGIKID成就</div>
+              <div class="mh-col mh-track"><span data-i18n="track_col1">赛道分类</span></div>
+              <div class="mh-col mh-comp"><span data-i18n="track_col2">目标赛事</span></div>
+              <div class="mh-col mh-base"><span data-i18n="track_col3">核心依赖<span data-i18n="mob_course">课程</span>阶段</span></div>
+              <div class="mh-col mh-achieve"><span data-i18n="track_col4">MAGIKID成就</span></div>
             </div>
 
             <!-- Track A: Algorithm & Olympiad -->
@@ -1892,7 +2017,7 @@
                     </div>
                     <div class="track-achieve-item">
                       <span class="ta-dot ta-red"></span>
-                      <span>2026 届学员成为<strong style="color:#D32F2F">美国奥 AI 代表队 4 名队员之一</strong>，代表美国参赛</span>
+                      <span>2026 届<span data-i18n="mob_students">学员</span>成为<strong style="color:#D32F2F">美国奥 AI 代表队 4 名队员之一</strong>，代表美国参赛</span>
                     </div>
                     <div class="track-achieve-item">
                       <span class="ta-dot ta-cyan"></span>
@@ -2043,7 +2168,7 @@
                     </div>
                     <div class="track-achieve-item">
                       <span class="ta-dot ta-gold"></span>
-                      <span><strong>2026 年：3 组学员</strong>开始启动创业项目</span>
+                      <span><strong>2026 年：3 组<span data-i18n="mob_students">学员</span></strong>开始启动创业项目</span>
                     </div>
                   </div>
                 </div>
@@ -2052,7 +2177,7 @@
           </div>
           <div class="mapping-note">
             <span class="note-icon">💡</span>
-            <span>选课路径：先完成基础阶段课程，再根据目标赛事选择对应的 Elite 专项深化方向</span>
+            <span>选课路径：先完成基础阶段<span data-i18n="mob_course">课程</span>，再根据目标赛事选择对应的 Elite 专项深化方向</span>
           </div>
         </div>
 
@@ -2075,7 +2200,7 @@
             </div>
             <div class="comp-prereq">
               <span class="comp-prereq-icon">📚</span>
-              <span class="comp-prereq-label">前置课程：</span>
+              <span class="comp-prereq-label">前置<span data-i18n="mob_course">课程</span>：</span>
               <span>Elite 1 & 2 · 深度学习 / 模型调优 / NLP & CV 算法</span>
             </div>
             <div class="comp-training">
@@ -2090,7 +2215,7 @@
                 <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>Poster 答辩演练 (4节)</strong><br>斯洛文尼亚赛制 Poster 制作与英文答辩</div></li>
               </ul>
             </div>
-            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询<span data-i18n="mob_enroll">报名</span></a>
           </div>
 
           <!-- AI Olympia -->
@@ -2110,7 +2235,7 @@
             </div>
             <div class="comp-prereq">
               <span class="comp-prereq-icon">📚</span>
-              <span class="comp-prereq-label">前置课程：</span>
+              <span class="comp-prereq-label">前置<span data-i18n="mob_course">课程</span>：</span>
               <span>Elite 1 & 2 · 深度学习 / 模型调优 / NLP & CV 算法</span>
             </div>
             <div class="comp-training">
@@ -2125,7 +2250,7 @@
                 <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>Poster 答辩演练 (4节)</strong><br>斯洛文尼亚赛制 Poster 制作与英文答辩</div></li>
               </ul>
             </div>
-            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询<span data-i18n="mob_enroll">报名</span></a>
           </div>
 
           <!-- VEX AI Competition -->
@@ -2141,11 +2266,11 @@
               <span class="comp-tag org">REC Foundation / VEX Robotics</span>
             </div>
             <div class="comp-desc">
-              高级 AI 机器人竞赛，考察自动驾驶、计算机视觉与算法策略，与 MAGIKID 机器人课程深度衔接。
+              高级 AI 机器人<span data-i18n="mob_comp">竞赛</span>，考察自动驾驶、计算机视觉与算法策略，与 MAGIKID 机器人<span data-i18n="mob_course">课程</span>深度衔接。
             </div>
             <div class="comp-prereq">
               <span class="comp-prereq-icon">📚</span>
-              <span class="comp-prereq-label">前置课程：</span>
+              <span class="comp-prereq-label">前置<span data-i18n="mob_course">课程</span>：</span>
               <span>Elite 1（含 ROS 2 模块）· Visionary & Elite 1</span>
             </div>
             <div class="comp-training">
@@ -2160,7 +2285,7 @@
                 <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>多机协同 (4节)</strong><br>双机通信与策略博弈实战</div></li>
               </ul>
             </div>
-            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询<span data-i18n="mob_enroll">报名</span></a>
           </div>
 
           <!-- Zero Robotics -->
@@ -2180,7 +2305,7 @@
             </div>
             <div class="comp-prereq">
               <span class="comp-prereq-icon">📚</span>
-              <span class="comp-prereq-label">前置课程：</span>
+              <span class="comp-prereq-label">前置<span data-i18n="mob_course">课程</span>：</span>
               <span>Explorer & Elite 2 · API 集成 / LLM 微调 / 数据科学</span>
             </div>
             <div class="comp-training">
@@ -2195,7 +2320,7 @@
                 <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>方案策划与社会影响论证 (4节)</strong><br>社会意义陈述与技术方案呈现</div></li>
               </ul>
             </div>
-            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询<span data-i18n="mob_enroll">报名</span></a>
           </div>
 
           <!-- BEHAVIOR Challenge -->
@@ -2215,7 +2340,7 @@
             </div>
             <div class="comp-prereq">
               <span class="comp-prereq-icon">📚</span>
-              <span class="comp-prereq-label">前置课程：</span>
+              <span class="comp-prereq-label">前置<span data-i18n="mob_course">课程</span>：</span>
               <span>Elite 1（含 ROS 2 模块）· Visionary & Elite 1</span>
             </div>
             <div class="comp-training">
@@ -2230,7 +2355,7 @@
                 <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>多机协同 (4节)</strong><br>双机通信与策略博弈实战</div></li>
               </ul>
             </div>
-            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询<span data-i18n="mob_enroll">报名</span></a>
           </div>
 
           <!-- Presidential AI Challenge -->
@@ -2250,7 +2375,7 @@
             </div>
             <div class="comp-prereq">
               <span class="comp-prereq-icon">📚</span>
-              <span class="comp-prereq-label">前置课程：</span>
+              <span class="comp-prereq-label">前置<span data-i18n="mob_course">课程</span>：</span>
               <span>Explorer & Elite 2 · API 集成 / LLM 微调 / 数据科学</span>
             </div>
             <div class="comp-training">
@@ -2265,7 +2390,7 @@
                 <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>社会影响力陈述 (4节)</strong><br>方案策划与社会意义论证</div></li>
               </ul>
             </div>
-            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询<span data-i18n="mob_enroll">报名</span></a>
           </div>
 
           <!-- NASA Space Apps -->
@@ -2285,7 +2410,7 @@
             </div>
             <div class="comp-prereq">
               <span class="comp-prereq-icon">📚</span>
-              <span class="comp-prereq-label">前置课程：</span>
+              <span class="comp-prereq-label">前置<span data-i18n="mob_course">课程</span>：</span>
               <span>Explorer & Elite 2 · API 集成 / LLM 微调 / 数据科学</span>
             </div>
             <div class="comp-training">
@@ -2300,7 +2425,7 @@
                 <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>社会影响力陈述 (4节)</strong><br>方案策划与社会意义论证</div></li>
               </ul>
             </div>
-            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询<span data-i18n="mob_enroll">报名</span></a>
           </div>
 
           <!-- Kaggle -->
@@ -2320,7 +2445,7 @@
             </div>
             <div class="comp-prereq">
               <span class="comp-prereq-icon">📚</span>
-              <span class="comp-prereq-label">前置课程：</span>
+              <span class="comp-prereq-label">前置<span data-i18n="mob_course">课程</span>：</span>
               <span>Elite 1 · 深度学习基础 / PyTorch / 特征工程入门</span>
             </div>
             <div class="comp-training">
@@ -2335,7 +2460,7 @@
                 <li class="comp-camp-item"><span class="comp-camp-dot dot-gold"></span><div><strong>Pipeline 自动化 (2节)</strong><br>高效实验记录与代码流水线管理</div></li>
               </ul>
             </div>
-            <a href="#cta" class="comp-cta-btn">🚀 立即咨询报名</a>
+            <a href="#cta" class="comp-cta-btn">🚀 立即咨询<span data-i18n="mob_enroll">报名</span></a>
           </div>
 
         </div>
@@ -2347,7 +2472,7 @@
   <div class="container" style="position:relative;z-index:2">
     <div class="section-tag">Join Us</div>
     <h2>准备好让孩子站上<span style="color:var(--gold)"> AI 世界赛场</span>了吗？</h2>
-    <p>课程顾问 1对1 评估孩子基础，为您定制入学路径</p>
+    <p><span data-i18n="mob_course">课程</span>顾问 1对1 评估孩子基础，为您定制入学路径</p>
     <div class="cta-form">
       <input class="cta-input" type="text" placeholder="孩子姓名 / Student Name">
       <input class="cta-input" type="text" placeholder="年龄 / 年级 Age & Grade">
@@ -2355,7 +2480,7 @@
     </div>
     <a href="mailto:info@magikidlab.com" class="btn-primary" style="margin-bottom:24px">📩 预约免费评估课</a>
     <div class="cta-contact">
-      或联系我们：<a href="tel:+13107803793">(310) 780-3793</a> &nbsp;|&nbsp;
+      或<span data-i18n="footer_contact">联系我们</span>：<a href="tel:+13107803793">(310) 780-3793</a> &nbsp;|&nbsp;
       <a href="mailto:info@magikidlab.com">info@magikidlab.com</a> &nbsp;|&nbsp;
       <a href="https://magikidlab.com" target="_blank">magikidlab.com</a>
     </div>
@@ -2367,11 +2492,11 @@
   <div class="footer-logo"><img src="images/magikid-logo.png" alt="MAGIKID" height="32"></div>
   <div class="footer-tagline">冠军基因 · 规模化 · 让每个孩子都能站上国际 AI 赛场</div>
     <div class="footer-links">
-    <a href="#overview">课程体系</a>
-    <a href="#curriculum">课程表</a>
-    <a href="#stories">学员故事</a>
-    <a href="#gallery">竞赛现场</a>
-    <a href="#competitions">竞赛导航</a>
+    <a href="#overview"><span data-i18n="nav_course"><span data-i18n="mob_course">课程</span>体系</span></a>
+    <a href="#curriculum"><span data-i18n="mob_course">课程</span>表</a>
+    <a href="#stories"><span data-i18n="mob_students">学员</span>故事</a>
+    <a href="#gallery"><span data-i18n="mob_comp">竞赛</span>现场</a>
+    <a href="#competitions"><span data-i18n="mob_comp">竞赛</span>导航</a>
     <a href="https://magikidlab.com" target="_blank">官网</a>
   </div>
   <div class="footer-copy">© 2026 MAGIKID AI Lab. All rights reserved. · Castle Hill Robotics Lab</div>
@@ -2437,7 +2562,7 @@
   <ul class="nav-items">
     <li><a href="#overview" class="nav-item">
       <span class="nav-icon">📚</span>
-      <span>课程</span>
+      <span><span data-i18n="mob_course">课程</span></span>
     </a></li>
     <li><a href="#curriculum" class="nav-item">
       <span class="nav-icon">📋</span>
@@ -2445,14 +2570,14 @@
     </a></li>
     <li><a href="#stories" class="nav-item">
       <span class="nav-icon">🏆</span>
-      <span>学员</span>
+      <span><span data-i18n="mob_students">学员</span></span>
     </a></li>
     <li><a href="#gallery" class="nav-item">
       <span class="nav-icon">🎯</span>
-      <span>竞赛</span>
+      <span><span data-i18n="mob_comp">竞赛</span></span>
     </a></li>
     <li><a href="#cta" class="nav-item nav-cta-mobile">
-      立即报名
+      立即<span data-i18n="mob_enroll">报名</span>
     </a></li>
   </ul>
 </nav>
