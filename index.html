@@ -62,6 +62,61 @@
   }
   .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,215,0,0.4); }
 
+  /* ===== MOBILE BOTTOM NAV ===== */
+  .mobile-bottom-nav {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 14, 26, 0.95);
+    backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 8px 0;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
+    z-index: 998;
+  }
+  .mobile-bottom-nav .nav-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .mobile-bottom-nav .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 10px;
+    font-weight: 500;
+    transition: color 0.2s;
+    padding: 4px 8px;
+  }
+  .mobile-bottom-nav .nav-item .nav-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+  .mobile-bottom-nav .nav-item:hover,
+  .mobile-bottom-nav .nav-item.active {
+    color: var(--gold);
+  }
+  .mobile-bottom-nav .nav-item.nav-cta-mobile {
+    background: linear-gradient(135deg, var(--gold), #FFA000);
+    color: #000;
+    font-weight: 700;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-top: -8px;
+  }
+  .mobile-bottom-nav .nav-item.nav-cta-mobile:hover {
+    transform: scale(1.05);
+  }
+
   /* ===== HERO ===== */
   .hero {
     min-height: 100vh; position: relative; overflow: hidden;
@@ -1181,6 +1236,10 @@
     .mr-achieve { padding: 16px 12px; }
     .track-achieve-box { margin-top: 0; }
     .comp-grid { grid-template-columns: 1fr; }
+
+    /* Mobile Bottom Nav */
+    .mobile-bottom-nav { display: block; }
+    body { padding-bottom: 70px; }
   }
 </style>
 </head>
@@ -2376,5 +2435,30 @@
     observer.observe(el);
   });
 </script>
+<!-- Mobile Bottom Navigation -->
+<nav class="mobile-bottom-nav">
+  <ul class="nav-items">
+    <li><a href="#overview" class="nav-item">
+      <span class="nav-icon">📚</span>
+      <span>课程</span>
+    </a></li>
+    <li><a href="#curriculum" class="nav-item">
+      <span class="nav-icon">📋</span>
+      <span>课表</span>
+    </a></li>
+    <li><a href="#stories" class="nav-item">
+      <span class="nav-icon">🏆</span>
+      <span>学员</span>
+    </a></li>
+    <li><a href="#gallery" class="nav-item">
+      <span class="nav-icon">🎯</span>
+      <span>竞赛</span>
+    </a></li>
+    <li><a href="#cta" class="nav-item nav-cta-mobile">
+      立即报名
+    </a></li>
+  </ul>
+</nav>
+
 </body>
 </html>
