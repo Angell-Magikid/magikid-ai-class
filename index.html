@@ -1266,62 +1266,59 @@
 <script>
 const i18n = {
   // 导航
-  nav_home: { zh: '<span data-i18n="mob_home">首页</span>', en: 'Home' },
-  nav_course: { zh: '<span data-i18n="mob_course">课程</span>体系', en: 'Curriculum' },
-  nav_schedule: { zh: '<span data-i18n="mob_course">课程</span>安排', en: 'Schedule' },
-  nav_students: { zh: '<span data-i18n="mob_students">学员</span>成就', en: 'Students' },
-  nav_competitions: { zh: '<span data-i18n="mob_comp">竞赛</span>荣誉', en: 'Competitions' },
-  nav_enroll: { zh: '立即<span data-i18n="mob_enroll">报名</span>', en: 'Enroll Now' },
-  
+  nav_course: { zh: '课程体系', en: 'Curriculum' },
+  nav_schedule: { zh: '课程表', en: 'Schedule' },
+  nav_students: { zh: '学员故事', en: 'Students' },
+  nav_comp: { zh: '竞赛现场', en: 'Competitions' },
+  nav_enroll: { zh: '立即报名', en: 'Enroll Now' },
+
   // Hero
   hero_badge: { zh: '🎓 MAGIKID 2026 精英计划', en: '🎓 MAGIKID 2026 Elite Program' },
-  hero_title: { zh: '<span data-i18n="hero_title">MAGIKID AI <span data-i18n="mob_comp">竞赛</span>班</span>', en: 'MAGIKID AI Competition Class' },
-  hero_sub: { zh: '<span data-i18n="hero_sub">通往常春藤与斯坦福的AI竞技之路</span>', en: 'Your Path to Ivy League & Stanford via AI Competition' },
-  hero_desc: { zh: '<span data-i18n="hero_desc">培养下一代AI领袖，从这里开始</span>', en: 'Cultivating Next-Gen AI Leaders' },
-  hero_cta: { zh: '<span data-i18n="hero_cta">开启AI之旅</span>', en: 'Start Your AI Journey' },
-  hero_stats_students: { zh: '优秀<span data-i18n="mob_students">学员</span>', en: 'Elite Students' },
+  hero_title: { zh: 'MAGIKID AI 竞赛班', en: 'MAGIKID AI Competition Class' },
+  hero_sub: { zh: '通往常春藤与斯坦福的AI竞技之路', en: 'Your Path to Ivy League & Stanford via AI Competition' },
+  hero_desc: { zh: '培养下一代AI领袖，从这里开始', en: 'Cultivating Next-Gen AI Leaders' },
+  hero_cta: { zh: '开启AI之旅', en: 'Start Your AI Journey' },
+  hero_stats_students: { zh: '优秀学员', en: 'Elite Students' },
   hero_stats_medals: { zh: '国际奖项', en: 'Intl Medals' },
   hero_stats_top: { zh: '顶尖录取', en: 'Top Admissions' },
   hero_stats_nasa: { zh: 'NASA挑战', en: 'NASA Challenges' },
-  
-  // <span data-i18n="mob_course">课程</span>体系
-  course_title: { zh: '<span data-i18n="course_title">🚀 <span data-i18n="mob_course">课程</span>体系</span>', en: '🚀 Curriculum System' },
-  course_sub: { zh: '<span data-i18n="course_sub">5阶段递进式AI精英培养</span>', en: '5-Stage Progressive AI Elite Training' },
-  course_explore: { zh: '<span data-i18n="course_explore">探索者</span>', en: 'Explorer' },
-  course_innovator: { zh: '<span data-i18n="course_innovator">创新者</span>', en: 'Innovator' },
-  course_challenger: { zh: '<span data-i18n="course_challenger">挑战者</span>', en: 'Challenger' },
-  course_master: { zh: '<span data-i18n="course_master">大师</span>', en: 'Master' },
-  course_specialist: { zh: '<span data-i18n="course_specialist">专家</span>', en: 'Specialist' },
-  
+
+  // 课程体系
+  course_title: { zh: '🚀 课程体系', en: '🚀 Curriculum System' },
+  course_sub: { zh: '5阶段递进式AI精英培养', en: '5-Stage Progressive AI Elite Training' },
+  course_explore: { zh: '探索者', en: 'Explorer' },
+  course_innovator: { zh: '创新者', en: 'Innovator' },
+  course_challenger: { zh: '挑战者', en: 'Challenger' },
+  course_master: { zh: '大师', en: 'Master' },
+  course_specialist: { zh: '专家', en: 'Specialist' },
+
   // 赛道表格
-  track_title: { zh: '<span data-i18n="track_title">🎯 赛道 · 赛事 · 核心<span data-i18n="mob_course">课程</span></span>', en: '🎯 Track · Competition · Core Curriculum' },
-  track_a: { zh: '<span data-i18n="track_a">赛道A：算法与奥赛类</span>', en: 'Track A: Algorithm & Olympiad' },
-  track_b: { zh: '<span data-i18n="track_b">赛道B：具身智能与机器人类</span>', en: 'Track B: Embodied Intelligence & Robotics' },
-  track_c: { zh: '<span data-i18n="track_c">赛道C：系统集成与黑客松类</span>', en: 'Track C: System Integration & Hackathons' },
+  track_title: { zh: '🎯 赛道 · 赛事 · 核心课程', en: '🎯 Track · Competition · Core Curriculum' },
+  track_a: { zh: '赛道A：算法与奥赛类', en: 'Track A: Algorithm & Olympiad' },
+  track_b: { zh: '赛道B：具身智能与机器人类', en: 'Track B: Embodied Intelligence & Robotics' },
+  track_c: { zh: '赛道C：系统集成与黑客松类', en: 'Track C: System Integration & Hackathons' },
   track_col1: { zh: '赛道分类', en: 'Track' },
   track_col2: { zh: '目标赛事', en: 'Target Competitions' },
-  track_col3: { zh: '核心依赖<span data-i18n="mob_course">课程</span>阶段', en: 'Prerequisite Courses' },
+  track_col3: { zh: '核心依赖课程阶段', en: 'Prerequisite Courses' },
   track_col4: { zh: 'MAGIKID成就', en: 'MAGIKID Achievements' },
-  
-  // <span data-i18n="mob_students">学员</span>荣耀
-  gallery_title: { zh: '<span data-i18n="gallery_title">🌟 <span data-i18n="mob_students">学员</span>荣耀 2026</span>', en: '🌟 Student Glory 2026' },
-  gallery_world: { zh: '<span data-i18n="gallery_world">🏆 World Stage</span>', en: '<span data-i18n="gallery_world">🏆 World Stage</span>' },
-  gallery_students: { zh: '<span data-i18n="gallery_students">MAGIKID 赛队 · 全球 AI <span data-i18n="mob_comp">竞赛</span>现场</span>', en: 'MAGIKID Teams · Global AI Competition' },
-  gallery_achieve: { zh: '🏅 Achievement', en: '🏅 Achievement' },
-  
+
+  // 学员荣耀
+  gallery_title: { zh: '🌟 学员荣耀 2026', en: '🌟 Student Glory 2026' },
+  gallery_world: { zh: '🏆 World Stage', en: '🏆 World Stage' },
+  gallery_students: { zh: 'MAGIKID 赛队 · 全球 AI 竞赛现场', en: 'MAGIKID Teams · Global AI Competition' },
+
   // 底部
-  footer_join: { zh: '<span data-i18n="footer_join">加入我们</span>', en: 'Join Us' },
-  footer_contact: { zh: '<span data-i18n="footer_contact">联系我们</span>', en: 'Contact Us' },
-  footer_location: { zh: '<span data-i18n="footer_location">加州·硅谷 | 德州·达拉斯</span>', en: 'California · Silicon Valley | Texas · Dallas' },
-  footer_rights: { zh: '© 2026 MAGIKID Lab. All Rights Reserved.', en: '© 2026 MAGIKID Lab. All Rights Reserved.' },
-  footer_note: { zh: '<span data-i18n="footer_note">MAGIKID Lab 保留法律追究权利</span>', en: 'MAGIKID Lab reserves all legal rights' },
-  
+  footer_join: { zh: '加入我们', en: 'Join Us' },
+  footer_contact: { zh: '联系我们', en: 'Contact Us' },
+  footer_location: { zh: '加州·硅谷 | 德州·达拉斯', en: 'California · Silicon Valley | Texas · Dallas' },
+  footer_note: { zh: 'MAGIKID Lab 保留法律追究权利', en: 'MAGIKID Lab reserves all legal rights' },
+
   // 移动端导航
-  mob_home: { zh: '<span data-i18n="mob_home">首页</span>', en: 'Home' },
-  mob_course: { zh: '<span data-i18n="mob_course">课程</span>', en: 'Course' },
-  mob_students: { zh: '<span data-i18n="mob_students">学员</span>', en: 'Students' },
-  mob_comp: { zh: '<span data-i18n="mob_comp">竞赛</span>', en: 'Comp' },
-  mob_enroll: { zh: '<span data-i18n="mob_enroll">报名</span>', en: 'Enroll' },
+  mob_home: { zh: '首页', en: 'Home' },
+  mob_course: { zh: '课程', en: 'Course' },
+  mob_students: { zh: '学员', en: 'Students' },
+  mob_comp: { zh: '竞赛', en: 'Comp' },
+  mob_enroll: { zh: '报名', en: 'Enroll' },
 };
 
 let currentLang = 'zh';
@@ -1329,28 +1326,20 @@ let currentLang = 'zh';
 function switchLang(lang) {
   currentLang = lang;
   document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
-  
+
   // 更新按钮状态
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.dataset.lang === lang);
   });
-  
-  // 更新所有带data-i18n的元素
+
+  // 更新所有带data-i18n的元素 - 使用innerHTML
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
-    if (i18n[key] && i18n[key][lang]) {
-      el.textContent = i18n[key][lang];
-    }
-  });
-  
-  // 更新带data-i18n-html的元素（支持HTML）
-  document.querySelectorAll('[data-i18n-html]').forEach(el => {
-    const key = el.dataset.i18nHtml;
     if (i18n[key] && i18n[key][lang]) {
       el.innerHTML = i18n[key][lang];
     }
   });
-  
+
   // 存储选择
   localStorage.setItem('magikid-lang', lang);
 }
@@ -1370,17 +1359,17 @@ document.addEventListener('DOMContentLoaded', () => {
 <nav>
   <a href="#" class="nav-logo"><img src="images/magikid-logo.png" alt="MAGIKID" height="36"></a>
   <ul class="nav-links">
-    <li><a href="#overview"><span data-i18n="nav_course"><span data-i18n="mob_course">课程</span>体系</span></a></li>
-    <li><a href="#curriculum"><span data-i18n="mob_course">课程</span>表</a></li>
-    <li><a href="#stories"><span data-i18n="mob_students">学员</span>故事</a></li>
-    <li><a href="#gallery"><span data-i18n="mob_comp">竞赛</span>现场</a></li>
-    <li><a href="#competitions"><span data-i18n="mob_comp">竞赛</span>导航</a></li>
+    <li><a href="#overview" data-i18n="nav_course">课程体系</a></li>
+    <li><a href="#curriculum" data-i18n="nav_schedule">课程表</a></li>
+    <li><a href="#stories" data-i18n="nav_students">学员故事</a></li>
+    <li><a href="#gallery" data-i18n="nav_comp">竞赛现场</a></li>
+    <li><a href="#competitions" data-i18n="nav_comp">竞赛导航</a></li>
   </ul>
   <div class="lang-switcher">
     <button class="lang-btn active" data-lang="zh" onclick="switchLang('zh')">中文</button>
     <button class="lang-btn" data-lang="en" onclick="switchLang('en')">EN</button>
   </div>
-  <a href="#cta" class="nav-cta">立即<span data-i18n="mob_enroll">报名</span> →</a>
+  <a href="#cta" class="nav-cta" data-i18n="nav_enroll">立即报名 →</a>
 </nav>
 
 <!-- HERO -->
@@ -1393,15 +1382,15 @@ document.addEventListener('DOMContentLoaded', () => {
     <h1>
       <span class="gold">AI Olympia</span> ×<br>
       <span class="cyan">MAGIKID</span><br>
-      <span data-i18n="mob_comp">竞赛</span>精英培训班
+      <span data-i18n="hero_title">竞赛精英培训班</span>
     </h1>
     <p class="hero-sub">
       36×5 课时 · 从零到赛场 · <em>理论 + 竞技 + 科研</em> 三位一体<br>
       让每一个孩子都能站上<em>国际AI竞技舞台</em>
     </p>
     <div class="hero-btns">
-      <a href="#cta" class="btn-primary">🚀 立即<span data-i18n="mob_enroll">报名</span></a>
-      <a href="#curriculum" class="btn-secondary">查看<span data-i18n="mob_course">课程</span>表 ↓</a>
+      <a href="#cta" class="btn-primary" data-i18n="hero_cta">🚀 开启AI之旅</a>
+      <a href="#curriculum" class="btn-secondary" data-i18n="nav_schedule">查看课程表 ↓</a>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1826,7 +1815,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="container">
         <div class="section-header">
           <div class="section-tag">Champion Stories</div>
-          <h2 class="section-title"><span data-i18n="mob_students">学员</span><span>荣耀 2026</span></h2>
+          <h2 class="section-title" data-i18n="gallery_title">🌟 学员荣耀 2026</h2>
           <p class="section-desc">从 MAGIKID 课堂出发，走上世界赛场，叩响顶尖名校的大门。</p>
         </div>
 
